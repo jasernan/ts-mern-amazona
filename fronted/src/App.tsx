@@ -1,6 +1,7 @@
 //import { useState } from 'react'
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
-import { sampleProducts } from './data'
+import { Container, Nav, Navbar } from 'react-bootstrap'
+// import { a } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   return (
@@ -11,10 +12,10 @@ function App() {
             <Navbar.Brand>tsamazona</Navbar.Brand>
           </Container>
           <Nav>
-            <a href="/cart" className="nav-link">
+            <a href="/cart" className="nav-a">
               Cart
             </a>
-            <a href="/signin" className="nav-link">
+            <a href="/signin" className="nav-a">
               Sign In
             </a>
           </Nav>
@@ -22,19 +23,7 @@ function App() {
       </header>
       <main>
         <Container className="mt-3">
-          <Row>
-            {sampleProducts.map((product) => (
-              <Col key={product.slug}>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="product-image"
-                />
-                <h2>{product.name}</h2>
-                <p>${product.price}</p>
-              </Col>
-            ))}
-          </Row>
+          <Outlet />
         </Container>
       </main>
       <footer>
