@@ -19,10 +19,10 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} element={<HomePage />} />
-
+      {/* Ruta para la página de inicio, renderiza HomePage en la raíz */}
+      <Route path="product/:slug" element={<ProductPage />} />
       <Route path="cart" element={<CartPage />} />
       <Route path="signin" element={<SignInPage />} />
-      {<Route path="product/:slug" element={<ProductPage />} />}
       {/* <Route path="dashboard" element={<Dashboard />} /> */}
       {/* ... etc. */}
     </Route>
